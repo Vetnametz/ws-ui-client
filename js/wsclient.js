@@ -54,14 +54,16 @@ function openWSConnection(protocol, hostname, port, endpoint) {
         };
     } catch (exception) {
         console.error(exception);
+        webSocket.close();
     }
 }
 /**
  * Send a message to the WebSocket server
  */
 function onSendClick() {
-    if (webSocket.readyState != WebSocket.OPEN) {
+    if (webSocket.readyState !== WebSocket.OPEN) {
         console.error("webSocket is not open: " + webSocket.readyState);
+        webSocket.close();
         return;
     }
     var msg = document.getElementById("message").value;
