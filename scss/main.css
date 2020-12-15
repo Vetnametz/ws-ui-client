@@ -181,17 +181,18 @@
         flex-grow: 2;
         width: 100%;
         border-bottom: 1px solid #ACB6E0; }
-      .screen-horizontal .state-block .process-state .exp-detail .exp, .screen-horizontal .state-block .process-state .exp-detail .time-remaining {
-        padding: 3px 10px; }
-      .screen-horizontal .state-block .process-state .exp-detail .label {
-        color: #ACB6E0;
-        font-size: 16px; }
-      .screen-horizontal .state-block .process-state .exp-detail .value {
-        font-size: 22px; }
+      .screen-horizontal .state-block .process-state .exp-detail {
+        flex-grow: 3; }
+        .screen-horizontal .state-block .process-state .exp-detail .exp, .screen-horizontal .state-block .process-state .exp-detail .time-remaining {
+          padding: 3px 10px; }
+        .screen-horizontal .state-block .process-state .exp-detail .label {
+          color: #ACB6E0;
+          font-size: 16px; }
+        .screen-horizontal .state-block .process-state .exp-detail .value {
+          font-size: 22px; }
       .screen-horizontal .state-block .process-state .icon {
         padding: 10px;
-        width: 100%;
-        text-align: center; }
+        margin: 0 auto; }
       .screen-horizontal .state-block .process-state .name {
         text-align: center;
         padding: 5px 10px 10px 10px;
