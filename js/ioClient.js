@@ -37,6 +37,9 @@ function openWSConnection(protocol, hostname, port, endpoint) {
       if (parameters.orientation !== 0) {
         template = document.getElementById('verticalTemplate').innerHTML;
       }
+      else {
+          template = document.getElementById('horizontalTemplate').innerHTML;
+      }
       renderTemplate(parameters, template);
     });
 

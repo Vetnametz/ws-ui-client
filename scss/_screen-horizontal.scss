@@ -1,0 +1,100 @@
+.screen-horizontal {
+  border: solid 1px black;
+  position: fixed;
+  z-index: 3;
+  background-color: white;
+  left: -40px;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 240px;
+  overflow: hidden;
+  transform: rotate(-90deg);
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #D2D7EB;
+    border-bottom: 1px solid $border-color;
+    box-shadow: 0 -0 4px 1px rgba(0, 0, 0, 0.6);
+    .ip-address {
+      display: flex;
+      align-items: center;
+      span {
+        color: #5C6799;
+        margin-right: 5px;
+      }
+    }
+  }
+  .state-block {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    flex-grow: 2;
+    .first-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $border-color;
+      .interlock-state {
+        padding: 10px;
+      }
+      .temp-state {
+        min-width: 70px;
+        text-align: right;
+        padding: 10px;
+        border-left: 1px solid $border-color;
+        .label {
+          color: $text-light;
+        }
+      }
+    }
+    .process-state {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex-grow: 2;
+      .wrapper {
+        display: flex;
+        flex-grow: 2;
+        width: 100%;
+        border-bottom: 1px solid $border-color;
+      }
+      .exp-detail {
+        .exp, .time-remaining {
+          padding: 3px 10px;
+        }
+        .label {
+          color: $text-light;
+          font-size: 16px;
+        }
+        .value {
+          font-size: 22px;
+        }
+      }
+      .icon {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+      }
+      .name {
+        text-align: center;
+        padding: 5px 10px 10px 10px;
+        width: 100%;
+        font-size: 22px;
+      }
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    color: $text-light;
+    box-shadow: 0 -2px 4px 1px rgba(0, 0, 0, 0.6);
+    .date-block {
+      color: $text-main;
+    }
+  }
+}

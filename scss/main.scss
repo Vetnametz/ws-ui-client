@@ -1,0 +1,66 @@
+@import "normalize.css";
+@import "vars";
+@import "loader";
+@import "fonts";
+@import "header";
+@import "screen-vertical-v1";
+@import "screen-vertical-v2";
+@import "screen-horizontal";
+@import "footer";
+
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+}
+body {
+	font-size: 18px;
+	font-weight: 400;
+	min-width: 320px;
+	position: relative;
+	font-family: $default;
+	color: $text-main;
+	overflow-x: hidden;
+	display: flex;
+    flex-direction: column;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img, svg {
+	max-height: 100%;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+//icons
+.flaticon-check-mark:before {
+  font-size: 72px;
+  color: $green;
+}
+
+.flaticon-right-arrow:before {
+  font-size: 72px;
+  color: $purple;
+}
+
+.flaticon-thermometer:before {
+  font-size: 72px;
+  color: $text-main;
+}
+
+.flaticon-loading:before {
+  font-size: 72px;
+  color: $text-main;
+}
+
+
+
+@import "media"; /* Always at the end*/
