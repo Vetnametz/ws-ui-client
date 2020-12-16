@@ -2,11 +2,8 @@
 @import "vars";
 @import "loader";
 @import "fonts";
-@import "header";
 @import "screen-vertical-v1";
-@import "screen-vertical-v2";
 @import "screen-horizontal";
-@import "footer";
 
 * {
 	margin: 0;
@@ -60,7 +57,3 @@ img, svg {
   font-size: 72px;
   color: $text-main;
 }
-
-
-
-@import "media"; /* Always at the end*/

@@ -261,41 +261,10 @@
 </head>
 
 <body>
-    <h1>WebSocket Client</h1>
-    <!-- WebSocket Connection Parameters Table -->
-    <table>
-        <tr>
-            <td width="200px">WS Protocol</td>
-            <td>
-                <select id="protocol">
-                    <option value="ws" selected="selected">ws</option>
-                    <option value="wss">wss</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>WS Hostname</td>
-            <td><input type="text" id="hostname" value="localhost"/></td>
-        </tr>
-        <tr>
-            <td>WS Port</td>
-            <td><input type="text" id="port" value="8383"/></td>
-        </tr>
-        <tr>
-            <td>WS Endpoint</td>
-            <td><input type="text" id="endpoint" /></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input id="btnConnect" type="button" value="Connect" onclick="onConnectClick()">&nbsp;&nbsp;
-                <input id="btnDisconnect" type="button" value="Disconnect" onclick="onDisconnectClick()"
-                    disabled="disabled">
-            </td>
-        </tr>
-    </table><br />
-
     <div id="output"></div>
 </body>
 
+<script>
+    openWSConnection('ws', 'localhost', '8383', '');
+</script>
 </html>
