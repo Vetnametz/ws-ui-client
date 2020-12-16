@@ -1,21 +1,21 @@
 .screen-vertical-v1 {
   position: fixed;
+  transform: rotate(90deg);
+  left: 40px;
+  top: -40px;
   z-index: 3;
-  background-color: white;
-  left: 0;
-  bottom: 0;
-  width: 240px;
-  height: 320px;
-  border: 1px solid black;
-  //margin: 1rem;
   display: flex;
   flex-direction: column;
+  width: 240px;
+  height: 320px;
+  overflow: hidden;
+  background-color: white;
   header {
-    background-color: #D2D7EB;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    background-color: #D2D7EB;
     border-bottom: 1px solid $border-color;
     .name-block {
       white-space: nowrap;
@@ -71,11 +71,9 @@
       align-self: stretch;
       justify-content: space-between;
       .name {
-        //width: 55%;
         font-size: 22px;
       }
       .icon {
-        //width: 45%;
         text-align: center;
       }
     }
@@ -97,7 +95,6 @@
     align-items: center;
     padding: 2px 5px;
     border-top: 1px solid $text-main;
-
     .net-block {
       .ip-address, .fw {
         color: $text-light;
