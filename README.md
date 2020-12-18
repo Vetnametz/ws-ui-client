@@ -14,7 +14,7 @@ Beliave you have Git on raspberrypi
   - zeromq-server
   
 4. Prepare to lunch client at Chromium
-    instal Chromium extension - https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
+    install Chromium extension - https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
     at this extension "Open options page" -> at 6. Whitelisted domains from - Allow CORS -> add "localhost:8383"
   
 5. At "zeromq-server" repo checkout to "develp" branch 
