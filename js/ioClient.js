@@ -33,13 +33,14 @@ function openWSConnection(protocol, hostname, port, endpoint) {
 
     webSocket.on('new parameters', (parameters) => {
       console.dir(parameters, { depth: null, colors: true });
-      let template = document.getElementById('template').innerHTML;
-      // if (parameters.orientation !== 0) {
-      //   template = document.getElementById('template').innerHTML;
-      // }
-      // else {
-      //     template = document.getElementById('template').innerHTML;
-      // }
+
+      if (parameters.state === 'spinner') {
+        template = document.getElementById('template-spinner').innerHTML;
+      }
+      else {
+          template = document.getElementById('template').innerHTML;
+      }
+
       renderTemplate(parameters, template);
     });
 

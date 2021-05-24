@@ -11,18 +11,28 @@
 
     <script src="../js/ioClient.js"></script>
 
+    <script id="template-spinner" type="text/template">
+
+      <div class="screen spinner orientation<%= orientation %>">
+
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+      </div>
+
+    </script>
+
     <script id="template" type="text/template">
 
       <div class="screen orientation<%= orientation %>">
         <header>
 
           <div class="ip-address">
-            <span><%= ip %></span>
+            <span><%= ip_address %></span>
           </div>
 
           <ul class="icons-list">
 
-            <% switch (connection) {
+            <% switch (network) {
             case 'Ethernet' : %>
             <li>
               <i class="flaticon-ethernet"></i>
@@ -48,9 +58,9 @@
         </header>
 
         <div class="name-date-row">
-          <div class="name-block"><%= friendlyName %></div>
+          <div class="name-block"><%= friendly_name %></div>
           <div class="date-block">
-            <%=  new Date().toLocaleTimeString()  %>
+            <%=  new Date().toLocaleDateString()  %>
           </div>
         </div>
 
@@ -59,14 +69,14 @@
           <div class="process-state">
 
             <% switch (state) {
-            case 'Cooling' : %>
+            case 'cooling' : %>
             <div class="wrapper">
               <div class="icon">
                 <i class="flaticon-thermometer"></i>
               </div>
             </div>
 
-            <div class="name">Cooling: <span> <%= sensorTemperature %> °C</span></div>
+            <div class="name">Cooling: <span> <%= set_temperature %> °C</span></div>
             <% break;
 
             case 'not_ready' : %>
@@ -83,17 +93,17 @@
             <div class="wrapper wrapper-working">
               <div class="exp-detail">
                 <div class="exp">
-                  <div class="value"><%= experiment %></div>
+                  <div class="value"><%= file_name %></div>
                 </div>
                 <div class="time-remaining">
-                  <p class="label">Time Remaining: <%= new Date(expTimeRemaining).toLocaleTimeString() %></p>
+                  <p class="label">Time Remaining: <%= new Date(time_remaining).toLocaleTimeString() %></p>
                 </div>
-                <p>Experiment in Progress...</p>
+                <p class="experiment-text"><span class="br">Experiment</span> in Progress <span class="dots"></span></p>
               </div>
             </div>
             <% break;
 
-            case 'Ready' : %>
+            case 'ready' : %>
             <div class="wrapper">
 
 
@@ -113,13 +123,35 @@
 
         <footer>
           <div class="left-icon-block">
-            <span class="icon-Asset-3 icon-probe"></span>
-            <span class="icon-Asset-5 icon-door"></span>
-            <span class="icon-Asset-7 icon-key"></span>
+
+            <% if(probe === 0 ){ %>
+            <span class="icon-probe2 icon-off"></span>
+            <% } else { %>
+            <span class="icon-probe2 icon-on"></span>
+            <% } %>
+
+            <% if(door === 0 ){ %>
+            <span class="icon-door2 icon-off"></span>
+            <% } else { %>
+            <span class="icon-door2 icon-on"></span>
+            <% } %>
+
+            <% if(key === 0 ){ %>
+            <span class="icon-key2 icon-off"></span>
+            <% } else { %>
+            <span class="icon-key2 icon-on"></span>
+            <% } %>
+
           </div>
 
-          <div class="righ-icon-block">
-            <span class="icon-laser"></span>
+          <div class="right-icon-block">
+
+            <% if(laser === 0 ){ %>
+            <span class="icon-laser icon-off"></span>
+            <% } else { %>
+            <span class="icon-laser icon-laser-on"></span>
+            <% } %>
+
           </div>
         </footer>
       </div>
