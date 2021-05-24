@@ -101,8 +101,8 @@
     .screen footer .right-icon-block {
       display: flex;
       align-items: center; }
-      .screen footer .right-icon-block .icon-laser {
-        font-size: 30px; }
+      .screen footer .right-icon-block .icon-laser3 {
+        font-size: 40px; }
 
 * {
   margin: 0;
@@ -140,7 +140,7 @@ img, svg {
   color: #001366; }
 
 .icon-laser-on {
-  color: red; }
+  color: #c23525; }
 
 .icon-not-ready {
   font-size: 60px; }
