@@ -1,9 +1,7 @@
 @import "normalize.css";
 @import "vars";
-@import "loader";
 @import "fonts";
-@import "screen-vertical-v1";
-@import "screen-horizontal";
+@import "screen";
 
 * {
 	margin: 0;
@@ -38,18 +36,18 @@ img, svg {
 }
 
 //icons
+
+.icon-not-ready {
+  font-size: 60px;
+}
+
 .flaticon-check-mark:before {
-  font-size: 72px;
+  font-size: 60px;
   color: $green;
 }
 
-.flaticon-right-arrow:before {
-  font-size: 72px;
-  color: $purple;
-}
-
 .flaticon-thermometer:before {
-  font-size: 72px;
+  font-size: 60px;
   color: $text-main;
 }
 

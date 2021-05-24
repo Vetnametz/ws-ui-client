@@ -11,221 +11,118 @@
 
     <script src="../js/ioClient.js"></script>
 
-    <script id="horizontalTemplate" type="text/template">
+    <script id="template" type="text/template">
 
-      <div class="screen-horizontal">
+      <div class="screen orientation<%= orientation %>">
         <header>
-          <div class="name-block"><%= friendlyName %></div>
+
           <div class="ip-address">
             <span><%= ip %></span>
-            <i class="flaticon-ic-on-ico"></i>
           </div>
+
+          <ul class="icons-list">
+
+            <% switch (connection) {
+            case 'Ethernet' : %>
+            <li>
+              <i class="flaticon-ethernet"></i>
+            </li>
+            <% break;
+
+            case 'USB' : %>
+            <li>
+              <i class="flaticon-usb"></i>
+            </li>
+            <% break;
+
+            case 'WiFi' : %>
+            <li>
+              <i class="flaticon-wifi"></i>
+            </li>
+            <% break;
+
+            } %>
+
+          </ul>
+
         </header>
-        <div class="state-block cooling-state">
-          <div class="first-row">
-            <div class="interlock-state">
-              <p>Interlock: <span class="value"><%= interlock %></span></p>
-            </div>
-            <div class="temp-state">
-              <div class="value"><%= sensorTemperature %> &deg;C</div>
-            </div>
-          </div>
 
-          <div class="process-state">
-
-              <% switch (state) {
-              case 'Cooling' : %>
-                <div class="wrapper">
-                  <div class="icon">
-                    <i class="flaticon-thermometer"></i>
-                  </div>
-                </div>
-
-                <div class="name"><%= state %></div>
-              <% break;
-
-              case 'Idle' : %>
-                <div class="wrapper">
-                  <div class="icon">
-                    <i class="flaticon-right-arrow"></i>
-                  </div>
-                </div>
-
-                <div class="name"><%= state %></div>
-              <% break;
-
-              case 'Experiment in progress' : %>
-                <div class="wrapper">
-                  <div class="exp-detail">
-                    <div class="exp">
-                      <p class="label">Experiment</p>
-                      <div class="value"><%= experiment %></div>
-                    </div>
-                    <div class="time-remaining">
-                      <p class="label">Time remaining</p>
-                      <div class="value"><%= new Date(expTimeRemaining).toLocaleTimeString() %></div>
-                    </div>
-                  </div>
-
-                  <div class="icon">
-                    <div class="lds-ring blue"><div></div><div></div><div></div><div></div></div>
-                  </div>
-                </div>
-
-                <div class="name" style="color: white; background-color: #54E039;"><%= state %></div>
-              <% break;
-
-              case 'Ready' : %>
-                <div class="wrapper">
-                  <div class="exp-detail">
-                    <div class="exp">
-                      <p class="label">Experiment</p>
-                      <div class="value"><%= experiment %></div>
-                    </div>
-                    <div class="time-remaining">
-                      <p class="label">Time remaining</p>
-                      <div class="value"><%= new Date(expTimeRemaining).toLocaleTimeString() %></div>
-                    </div>
-                  </div>
-
-                  <div class="icon">
-                    <i class="flaticon-check-mark"></i>
-                  </div>
-                </div>
-
-                <div class="name" style="color: white; background-color: #54E039;"><%= state %></div>
-              <% break;
-
-              } %>
-
-          </div>
-        </div>
-        <footer>
-          <div class="fw">FW: <%= fw %></div>
+        <div class="name-date-row">
+          <div class="name-block"><%= friendlyName %></div>
           <div class="date-block">
             <%=  new Date().toLocaleTimeString()  %>
           </div>
+        </div>
+
+        <div class="state-row">
+
+          <div class="process-state">
+
+            <% switch (state) {
+            case 'Cooling' : %>
+            <div class="wrapper">
+              <div class="icon">
+                <i class="flaticon-thermometer"></i>
+              </div>
+            </div>
+
+            <div class="name">Cooling: <span> <%= sensorTemperature %> °C</span></div>
+            <% break;
+
+            case 'not_ready' : %>
+            <div class="wrapper">
+              <div class="icon">
+                <span class="icon-Asset-1 icon-not-ready"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+              </div>
+            </div>
+
+            <div class="name">Not Ready</div>
+            <% break;
+
+            case 'working' : %>
+            <div class="wrapper wrapper-working">
+              <div class="exp-detail">
+                <div class="exp">
+                  <div class="value"><%= experiment %></div>
+                </div>
+                <div class="time-remaining">
+                  <p class="label">Time Remaining: <%= new Date(expTimeRemaining).toLocaleTimeString() %></p>
+                </div>
+                <p>Experiment in Progress...</p>
+              </div>
+            </div>
+            <% break;
+
+            case 'Ready' : %>
+            <div class="wrapper">
+
+
+              <div class="icon">
+                <i class="flaticon-check-mark"></i>
+              </div>
+            </div>
+
+            <div class="name">Ready</div>
+            <% break;
+
+            } %>
+
+          </div>
+
+        </div>
+
+        <footer>
+          <div class="left-icon-block">
+            <span class="icon-Asset-3 icon-probe"></span>
+            <span class="icon-Asset-5 icon-door"></span>
+            <span class="icon-Asset-7 icon-key"></span>
+          </div>
+
+          <div class="righ-icon-block">
+            <span class="icon-laser"></span>
+          </div>
         </footer>
       </div>
-    </script>
-
-    <script id="verticalTemplate" type="text/template">
-
-        <div class="screen-vertical-v1">
-            <header>
-                <div class="name-block"><%= friendlyName %> </div>
-                <div class="time-block"><%=  new Date().toLocaleTimeString()  %></div>
-            </header>
-            <div class="state-block cooling-state">
-
-              <% if ( state == 'Idle' || state == 'Ready' ) { %>
-
-              <div class="interlock-state" style="background-color: #96A5E6">
-                <p class="label" style="color: white">Interlock</p>
-                <p class="value" style="color: white"><%= interlock %></p>
-              </div>
-
-              <% } else { %>
-
-              <div class="interlock-state">
-                <p class="label">Interlock</p>
-                <p class="value"><%= interlock %></p>
-              </div>
-
-              <% } %>
-
-              <% if ( state == 'Cooling' ) { %>
-
-              <div class="temp-state" style="background-color: #FFCF33">
-                <p class="label" style="color: #000000">Temperature</p>
-                <p class="value" style="color: #000000"><%= sensorTemperature %> °C</p>
-              </div>
-
-              <% } else { %>
-
-              <div class="temp-state">
-                <p class="label">Temperature</p>
-                <p class="value"><%= sensorTemperature %> °C</p>
-              </div>
-
-              <% } %>
-
-                <div class="process-state">
-                    <div class="name">
-                    <%= state %> 
-                    </div>
-
-                  <% switch (state) {
-                  case 'Cooling' : %>
-                  <div class="icon">
-                    <i class="flaticon-thermometer"></i>
-                  </div>
-                  <% break;
-
-                  case 'Idle' : %>
-                  <div class="icon">
-                    <i class="flaticon-right-arrow"></i>
-                  </div>
-                  <% break;
-
-                  case 'Experiment in progress' : %>
-                  <div class="icon">
-                    <div class="lds-ring blue"><div></div><div></div><div></div><div></div></div>
-                  </div>
-                  <% break;
-
-                  case 'Ready' : %>
-                  <div class="icon">
-                    <i class="flaticon-check-mark"></i>
-                  </div>
-                  <% break;
-
-                  } %>
-
-                </div>
-
-                <div class="exp-detail">
-                    <div class="exp">
-                    <p class="label">Experiment</p>
-                    <div class="value"><%= experiment %></div>
-                    </div>
-                    <div class="time-remaining">
-                    <p class="label">Time remaining</p>
-                    <div class="value"><%= new Date(expTimeRemaining).toLocaleTimeString() %></div>
-                    </div>
-                </div>
-            </div>
-            <footer>
-                <div class="net-block">
-                    <div class="ip-address"><%= ip %></div>
-                    <div class="fw">FW: <%= fw %></div>
-                </div>
-                <ul class="icons-list">
-
-                  <% switch (connection) {
-                  case 'Ethernet' : %>
-                  <li>
-                    <i class="flaticon-ethernet"></i>
-                  </li>
-                  <% break;
-
-                  case 'USB' : %>
-                  <li>
-                    <i class="flaticon-usb"></i>
-                  </li>
-                  <% break;
-
-                  case 'WiFi' : %>
-                  <li>
-                    <i class="flaticon-wifi"></i>
-                  </li>
-                  <% break;
-
-                  } %>
-
-                </ul>
-            </footer>
-        </div>
     </script>
 
     <style>
