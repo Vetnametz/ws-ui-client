@@ -35,19 +35,19 @@
             <% switch (network) {
             case 'ethernet' : %>
             <li>
-              <i class="flaticon-ethernet"></i>
+              <i class="icon-ethernet"></i>
             </li>
             <% break;
 
             case 'usb' : %>
             <li>
-              <i class="flaticon-usb"></i>
+              <i class="icon-usb"></i>
             </li>
             <% break;
 
             case 'wifi' : %>
             <li>
-              <i class="flaticon-wifi"></i>
+              <i class="icon-wifi"></i>
             </li>
             <% break;
 
@@ -72,7 +72,7 @@
             case 'cooling' : %>
             <div class="wrapper">
               <div class="icon">
-                <i class="flaticon-thermometer"></i>
+                <i class="icon-thermometer"></i>
               </div>
             </div>
 
@@ -82,7 +82,7 @@
             case 'not_ready' : %>
             <div class="wrapper">
               <div class="icon">
-                <span class="icon-Asset-1 icon-not-ready"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                <span class="icon-not_ready"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
               </div>
             </div>
 
@@ -106,9 +106,8 @@
             case 'ready' : %>
             <div class="wrapper">
 
-
               <div class="icon">
-                <i class="flaticon-check-mark"></i>
+                <span class="icon-check-ico"><span class="path1"></span><span class="path2"></span></span>
               </div>
             </div>
 
@@ -125,21 +124,21 @@
           <div class="left-icon-block">
 
             <% if(probe === 0 ){ %>
-            <span class="icon-probe2 icon-off"></span>
+            <span class="icon-probe icon-off"></span>
             <% } else { %>
-            <span class="icon-probe2 icon-on"></span>
+            <span class="icon-probe icon-on"></span>
             <% } %>
 
             <% if(door === 0 ){ %>
-            <span class="icon-door2 icon-off"></span>
+            <span class="icon-door icon-off"></span>
             <% } else { %>
-            <span class="icon-door2 icon-on"></span>
+            <span class="icon-door icon-on"></span>
             <% } %>
 
             <% if(key === 0 ){ %>
-            <span class="icon-key2 icon-off"></span>
+            <span class="icon-key icon-off"></span>
             <% } else { %>
-            <span class="icon-key2 icon-on"></span>
+            <span class="icon-key icon-on"></span>
             <% } %>
 
           </div>
@@ -147,9 +146,9 @@
           <div class="right-icon-block">
 
             <% if(laser === 0 ){ %>
-            <span class="icon-laser3 icon-off"></span>
+            <span class="icon-laser icon-off"></span>
             <% } else { %>
-            <span class="icon-laser3 icon-laser-on"></span>
+            <span class="icon-laser icon-laser-on"></span>
             <% } %>
 
           </div>

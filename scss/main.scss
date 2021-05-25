@@ -47,22 +47,18 @@ img, svg {
   color: #c33928;
 }
 
-.icon-not-ready {
+.icon-not_ready {
   font-size: 60px;
 }
 
-.flaticon-check-mark:before {
-  font-size: 60px;
-  color: $green;
+.icon-check-ico {
+  .path1, .path2 {
+    font-size: 60px;
+  }
 }
 
-.flaticon-thermometer:before {
+.icon-thermometer:before {
   font-size: 60px;
-  color: $text-main;
-}
-
-.flaticon-loading:before {
-  font-size: 72px;
   color: $text-main;
 }
 

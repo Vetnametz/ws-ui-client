@@ -1,6 +1,5 @@
 @import url(normalize.css);
 @import url(../fonts/stylesheet.css);
-@import url(../fonts/myIconFont/flaticon.css);
 @import url(../fonts/icomoon/style.css);
 .screen.orientation0 {
   position: fixed;
@@ -91,17 +90,17 @@
     .screen footer .left-icon-block {
       display: flex;
       align-items: center; }
-      .screen footer .left-icon-block .icon-door2,
-      .screen footer .left-icon-block .icon-key2 {
+      .screen footer .left-icon-block .icon-door,
+      .screen footer .left-icon-block .icon-key {
         font-size: 30px;
         margin-right: 25px; }
-      .screen footer .left-icon-block .icon-probe2 {
+      .screen footer .left-icon-block .icon-probe {
         font-size: 23px;
         margin-right: 25px; }
     .screen footer .right-icon-block {
       display: flex;
       align-items: center; }
-      .screen footer .right-icon-block .icon-laser3 {
+      .screen footer .right-icon-block .icon-laser {
         font-size: 40px; }
 
 * {
@@ -142,19 +141,14 @@ img, svg {
 .icon-laser-on {
   color: #c33928; }
 
-.icon-not-ready {
+.icon-not_ready {
   font-size: 60px; }
 
-.flaticon-check-mark:before {
-  font-size: 60px;
-  color: #54E039; }
+.icon-check-ico .path1, .icon-check-ico .path2 {
+  font-size: 60px; }
 
-.flaticon-thermometer:before {
+.icon-thermometer:before {
   font-size: 60px;
-  color: #001366; }
-
-.flaticon-loading:before {
-  font-size: 72px;
   color: #001366; }
 
 .dots {
