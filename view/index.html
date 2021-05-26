@@ -98,7 +98,13 @@
                 <div class="time-remaining">
                   <p class="label">Time Remaining: <%= new Date(time_remaining).toLocaleTimeString() %></p>
                 </div>
-                <p class="experiment-text"><span class="br">Experiment</span> in Progress <span class="dots"></span></p>
+                <p class="experiment-text"><span class="br">Experiment</span> in Progress
+                  <span class="loading-dots">
+                    <span class="loading-dots--dot"></span>
+                    <span class="loading-dots--dot"></span>
+                    <span class="loading-dots--dot"></span>
+                  </span>
+                </p>
               </div>
             </div>
             <% break;
