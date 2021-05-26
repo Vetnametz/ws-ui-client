@@ -34,18 +34,19 @@ function openWSConnection(protocol, hostname, port, endpoint) {
     webSocket.on('new parameters', (parameters) => {
       console.dir(parameters, { depth: null, colors: true });
 
-      if (parameters.state === 'spinner') {
-        template = document.getElementById('template-spinner').innerHTML;
-      }
-      else {
-          template = document.getElementById('template').innerHTML;
-      }
+      template = document.getElementById('template').innerHTML;
 
       renderTemplate(parameters, template);
     });
 
     webSocket.on('connect_failed', (details) => {
       console.log("WebSocket CONNECTION FAILED: " + JSON.stringify(details, null, 4));
+
+      ////add spiner template when connect_failed///
+        template = document.getElementById('template-spinner').innerHTML;
+        renderTemplate(false, template);
+      ///////
+
     });
 
     webSocket.on('error', (details) => {
@@ -97,13 +98,13 @@ function onSendClick() {
 function renderTemplate(data, templ) {
   // get the EJS template as a string
   console.log('EJS template:');
-  console.log(templ);
+  // console.log(templ);
   // data to output to the template function
   // var data = { names: ['loki', 'tobi', 'jane'] };
   // stores the rendered HTML
   var html = ejs.compile(templ)(data);
   console.log('Rendered HTML:');
-  console.log(html);
+  // console.log(html);
   // inject the rendered data to <body>
   document.getElementById('output').innerHTML = html;
   console.log('HTML injected to id=output');
