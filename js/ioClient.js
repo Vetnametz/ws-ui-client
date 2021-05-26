@@ -37,9 +37,13 @@ function openWSConnection(protocol, hostname, port, endpoint) {
       template = document.getElementById('template').innerHTML;
 
       renderTemplate(parameters, template);
+
+        //simulate onclose - need to remove!!!
+        setTimeout(() => webSocket.close(1000, "bye Bye"), 10000);
+
     });
 
-    webSocket.on('connect_failed', (details) => {
+      webSocket.on('connect_failed', (details) => {
       console.log("WebSocket CONNECTION FAILED: " + JSON.stringify(details, null, 4));
 
       ////add spiner template when connect_failed///
@@ -61,9 +65,16 @@ function openWSConnection(protocol, hostname, port, endpoint) {
     };
     webSocket.onclose = function (closeEvent) {
       console.log("WebSocket CLOSE: " + JSON.stringify(closeEvent, null, 4));
-      document.getElementById("btnSend").disabled = true;
-      document.getElementById("btnConnect").disabled = false;
-      document.getElementById("btnDisconnect").disabled = true;
+
+      // document.getElementById("btnSend").disabled = true;
+      // document.getElementById("btnConnect").disabled = false;
+      // document.getElementById("btnDisconnect").disabled = true;
+
+        ////add spiner template when connect_failed///
+        template = document.getElementById('template-spinner').innerHTML;
+        renderTemplate(false, template);
+
+
     };
     webSocket.onerror = function (errorEvent) {
       console.log("WebSocket ERROR: " + JSON.stringify(errorEvent, null, 4));
