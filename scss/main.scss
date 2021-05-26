@@ -14,10 +14,10 @@ html, body {
 body {
 	font-size: 18px;
     letter-spacing: .25px;
-	font-weight: 400;
 	min-width: 320px;
 	position: relative;
 	font-family: $default;
+    font-weight: normal;
 	color: $text-main;
 	overflow-x: hidden;
 	display: flex;
