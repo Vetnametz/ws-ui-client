@@ -18,6 +18,21 @@
   .experiment-text .br {
     display: block;
   }
+  .state-row .process-state .wrapper.wrapper-working .exp-detail {
+    .exp, .time-remaining {
+      margin-bottom: 20px;
+    }
+  }
+  footer {
+    .left-icon-block {
+      .icon-probe {
+        margin-right: 20px;
+      }
+      .icon-door {
+        margin-right: 29px;
+      }
+    }
+  }
 }
 
 .screen.orientation90 {
@@ -48,13 +63,11 @@
     align-items: center;
     padding: 5px 10px;
     background-color: #D2D7EB;
-    border-bottom: 1px solid $border-color;
-    box-shadow: 0 -0 4px 1px rgba(0, 0, 0, 0.6);
     .ip-address {
       display: flex;
       align-items: center;
       span {
-        color: #5C6799;
+        color: $text-main;
         margin-right: 5px;
       }
     }
@@ -73,6 +86,9 @@
     justify-content: space-between;
     padding: 5px 10px;
     border-bottom: 1px solid $border-color;
+    .date-block {
+      font-size: 14px;
+    }
   }
   .state-row {
     display: flex;
@@ -82,16 +98,26 @@
       width: 100%;
       .wrapper {
         width: 100%;
-        padding: 0 20px;
+        padding: 0 10px;
         display: flex;
         align-items: center;
         justify-content: center;
       }
       .wrapper.wrapper-working {
         justify-content: flex-start;
+        .exp-detail {
+          .exp {
+            margin-bottom: 10px;
+          }
+          .time-remaining {
+            margin-bottom: 10px;
+          }
+        }
       }
       .name {
         text-align: center;
+        font-size: 22px;
+        line-height: 40px;
       }
     }
   }
@@ -106,12 +132,14 @@
       align-items: center;
       .icon-door,
       .icon-key {
-        font-size: 30px;
-        margin-right: 25px;
+        font-size: 29px;
+      }
+      .icon-door {
+        margin-right: 40px;
       }
       .icon-probe {
-        font-size: 23px;
-        margin-right: 25px;
+        font-size: 26px;
+        margin-right: 36px;
       }
     }
     .right-icon-block {

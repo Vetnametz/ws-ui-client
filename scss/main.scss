@@ -44,7 +44,7 @@ img, svg {
   color: $text-main;
 }
 .icon-laser-on {
-  color: #c33928;
+  color: #CA4B31;
 }
 
 .icon-not_ready {
@@ -177,7 +177,7 @@ img, svg {
 
   50% {
     opacity: 1;
-    transform: scale(1.22, 1.22);
+    transform: scale(1.25, 1.25);
   }
 
   100% {
@@ -189,12 +189,18 @@ img, svg {
 .loading-dots {
   text-align: center;
   width: 100%;
+  margin-left: 4px;
+  vertical-align: text-top;
   &--dot {
     animation: dot-keyframes 1.5s infinite ease-in-out;
     background-color: $text-main;
     display: inline-block;
-    height: 6px;
-    width: 6px;
+    height: 8px;
+    width: 8px;
+    margin-right: 4px;
+    &:last-child {
+      margin-right: 0;
+    }
     &:nth-child(2) {
       animation-delay: .5s;
     }
