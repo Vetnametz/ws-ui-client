@@ -102,7 +102,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 5px 10px;
     border-top: 1px solid #ACB6E0; }
     .screen footer .left-icon-block {
       display: flex;
@@ -135,7 +135,7 @@ body {
   min-width: 320px;
   position: relative;
   font-family: "Noto San", sans-serif;
-  font-weight: normal;
+  font-weight: 300;
   color: #001366;
   overflow-x: hidden;
   display: flex;
