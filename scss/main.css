@@ -276,14 +276,9 @@ img, svg {
     opacity: 0; } }
 @keyframes dot-keyframes {
   0% {
-    opacity: .7;
-    transform: scale(1, 1); }
-  50% {
-    opacity: 1;
-    transform: scale(1.25, 1.25); }
+    opacity: 0; }
   100% {
-    opacity: .7;
-    transform: scale(1, 1); } }
+    opacity: 1; } }
 .loading-dots {
   text-align: center;
   width: 100%;
